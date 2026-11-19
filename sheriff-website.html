@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500&family=Inter:wght@400;600">
+  <style>
+    /* Whole page: beige background, simple font, no white gap at the edges */
+    body {
+      margin: 0;
+      background: #F3EADB;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Burgundy bar at the top */
+    header {
+      background: #6B1E2E;
+      color: white;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    /* The login box: white-ish, centered, rounded corners */
+    form {
+      background: #FBF7F0;
+      width: 320px;
+      margin: 60px auto;
+      padding: 30px;
+      border-radius: 10px;
+    }
+
+    /* Each label on its own line, with space above */
+    label {
+      display: block;
+      margin-top: 15px;
+    }
+
+    /* Text boxes fill the box's width */
+    input {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+    }
+
+    /* Hide Edge's own eye icon inside the password box */
+    input::-ms-reveal {
+      display: none;
+    }
+
+    /* Lets the eye sit inside the password box */
+    .box {
+      position: relative;
+    }
+
+    /* Leave room on the right so typing doesn't go under the eye */
+    .box input {
+      padding-right: 40px;
+    }
+
+    /* The eye: at the right end of the password box, centered up and down */
+    #eye {
+      position: absolute;
+      right: 8px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: none;
+      border: none;
+      padding: 0;
+      display: flex;
+      color: #6B1E2E;
+      cursor: pointer;
+    }
+
+    /* Empty boxes turn red when you try to log in without filling them */
+    input:user-invalid {
+      border: 2px solid red;
+    }
+
+    /* The big "Log in" button: burgundy, full width */
+    button[type="submit"] {
+      width: 100%;
+      margin-top: 20px;
+      padding: 12px;
+      background: #6B1E2E;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Digital Marketing Portal</header>
+
+  <form>
+    <h1>Welcome back</h1>
+    <p>Sign in to the portal.</p>
+
+    <label for="username">Username</label>
+    <input id="username" type="text" required>
+
+    <label for="password">Password</label>
+    <div class="box">
+      <input id="password" type="password" required>
+      <button type="button" id="eye">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 12c2-4 5.5-7 10-7s8 3 10 7c-2 4-5.5 7-10 7S4 16 2 12z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
+
+    <button type="submit">Log in</button>
+  </form>
+
+  <script>
+    // Find the password box and the eye button
+    const password = document.getElementById("password");
+    const eye = document.getElementById("eye");
+
+    // Clicking the eye switches between hidden (dots) and visible (text)
+    eye.onclick = function () {
+      if (password.type === "password") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    };
+  </script>
+</body>
+</html>
