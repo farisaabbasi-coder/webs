@@ -1,0 +1,82 @@
+/* Whole page: beige background, simple font, no white gap at the edges */
+body {
+  margin: 0;
+  background: #F3EADB;
+  font-family: Arial, sans-serif;
+}
+
+/* Burgundy bar at the top */
+header {
+  background: #6B1E2E;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+}
+
+/* The login box: white-ish, centered, rounded corners */
+form {
+  background: #FBF7F0;
+  width: 320px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 10px;
+}
+
+/* Each label on its own line, with space above */
+label {
+  display: block;
+  margin-top: 15px;
+}
+
+/* Text boxes fill the box's width */
+input {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/* Hide Edge's own eye icon inside the password box */
+input::-ms-reveal {
+  display: none;
+}
+
+/* Lets the eye sit inside the password box */
+.box {
+  position: relative;
+}
+
+/* Leave room on the right so typing doesn't go under the eye */
+.box input {
+  padding-right: 40px;
+}
+
+/* The eye: at the right end of the password box, centered up and down */
+#eye {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  padding: 0;
+  display: flex;
+  color: #6B1E2E;
+  cursor: pointer;
+}
+
+/* Empty boxes turn red when you try to log in without filling them */
+input:user-invalid {
+  border: 2px solid red;
+}
+
+/* The big "Log in" button: burgundy, full width */
+button[type="submit"] {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #6B1E2E;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500&family=Inter:wght@400;600">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>Digital Marketing Portal</header>
+
+  <form>
+    <h1>Welcome back</h1>
+    <p>Sign in to the portal.</p>
+
+    <label for="username">Username</label>
+    <input id="username" type="text" required>
+
+    <label for="password">Password</label>
+    <div class="box">
+      <input id="password" type="password" required>
+      <button type="button" id="eye">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M2 12c2-4 5.5-7 10-7s8 3 10 7c-2 4-5.5 7-10 7S4 16 2 12z"/>
+          <circle cx="12" cy="12" r="3"/>
+        </svg>
+      </button>
+    </div>
+
+    <button type="submit">Log in</button>
+  </form>
+
+  <script src="app.js"></script>
+</body>
+</html>
